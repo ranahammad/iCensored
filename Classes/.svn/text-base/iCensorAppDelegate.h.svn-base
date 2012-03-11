@@ -1,0 +1,20 @@
+//
+//  iCensorAppDelegate.h
+//  iCensor
+//
+//  Created by Faisal Saeed on 8/19/09.
+//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//
+
+@class MainViewController;
+
+@interface iCensorAppDelegate : NSObject <UIApplicationDelegate> {
+    UIWindow *window;
+    MainViewController *mainViewController;
+}
+
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) MainViewController *mainViewController;
+
+@end
+

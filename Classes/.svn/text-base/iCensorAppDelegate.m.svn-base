@@ -1,0 +1,39 @@
+//
+//  iCensorAppDelegate.m
+//  iCensor
+//
+//  Created by Faisal Saeed on 8/19/09.
+//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//
+
+#import "iCensorAppDelegate.h"
+#import "MainViewController.h"
+
+@implementation iCensorAppDelegate
+
+
+@synthesize window;
+@synthesize mainViewController;
+
+
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
+{
+	[[UIApplication sharedApplication] setStatusBarHidden:TRUE];
+    
+	MainViewController *aController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
+	self.mainViewController = aController;
+	[aController release];
+	
+    mainViewController.view.frame = [UIScreen mainScreen].applicationFrame;
+	[window addSubview:[mainViewController view]];
+    [window makeKeyAndVisible];
+}
+
+
+- (void)dealloc {
+    [mainViewController release];
+    [window release];
+    [super dealloc];
+}
+
+@end
